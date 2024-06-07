@@ -1,20 +1,22 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="warning" class="fntclr">
+    <ion-row>
+      <ion-icon style="font-size: 27px;" name="clipboard-outline"></ion-icon>
+      <label class="fnt cntr">Daily Work Mnagement System</label>
+    </ion-row>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-row class="cntr2">
+      <label class="fnt cntr2 fntclr">Select Module</label>
+    </ion-row>
+    <ion-button color="warning" routerLink="/admin" shape="round">Admin</ion-button>
+    <ion-button color="warning" routerLink="/approval" shape="round">Approval</ion-button>
+    <ion-button color="warning" routerLink="/user" shape="round">User</ion-button>
+
+
   </div>
 </ion-content>

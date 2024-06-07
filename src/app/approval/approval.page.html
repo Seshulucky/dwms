@@ -1,0 +1,18 @@
+<ion-header >
+  <ion-toolbar color="medium">
+    <ion-title>Approval System</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list style="background-color: transparent;">
+    <ion-item class="item-content"   *ngFor="let file of pendingFiles">
+      <ion-label>{{ file.title }}</ion-label>
+      <ion-button color="success" >Approve</ion-button>
+      <ion-button color="danger" >Reject</ion-button>
+    </ion-item>
+  </ion-list>
+  <div style="margin-left: 75%;">
+    <ion-button  color="warning" routerLink="/home">Back</ion-button>
+  </div>
+</ion-content>

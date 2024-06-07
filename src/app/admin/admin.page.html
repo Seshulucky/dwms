@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Admind Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="warning" >Create User</ion-button>
+
+
+  <ion-list class="item-content">
+    <ion-item class="item-content" *ngFor="let file of uploadedFiles">
+      <ion-label>{{ file.title }}</ion-label>
+      <ion-button color="success" >View</ion-button>
+
+      <ion-button color="primary" >Approve</ion-button>
+
+    </ion-item>
+  </ion-list>
+  <ion-button color="danger" expand="full" routerLink="/home">Back</ion-button>
+</ion-content>

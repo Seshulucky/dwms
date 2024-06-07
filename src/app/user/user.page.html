@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>User Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="uploadFile()">
+    <ion-item class="item-content">
+      <ion-label position="floating">Title</ion-label>
+      <ion-input [(ngModel)]="fileData.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item class="item-content">
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea [(ngModel)]="fileData.description" name="description"></ion-textarea>
+    </ion-item>
+    <ion-item class="item-content">
+      <ion-label position="floating">Client Name</ion-label>
+      <ion-input [(ngModel)]="fileData.clientName" name="clientName"></ion-input>
+    </ion-item>
+    <ion-item class="item-content">
+      <ion-label position="floating">Taglines</ion-label>
+      <ion-input [(ngModel)]="fileData.taglines" name="taglines"></ion-input>
+    </ion-item>
+    <ion-item class="item-content">
+      <ion-label position="stacked">Image</ion-label>
+
+      <ion-input ></ion-input>
+    </ion-item>
+    <ion-item class="item-content">
+      <ion-label position="stacked">PSD File</ion-label>
+      <ion-input ></ion-input>
+
+    </ion-item>
+    <ion-button color="light" expand="full" type="submit">Upload</ion-button>
+  </form>
+  <ion-row style="margin-left: 40%;">
+    <ion-button color="warning" routerLink="/home">Back</ion-button>
+  </ion-row>
+</ion-content>
