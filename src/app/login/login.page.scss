@@ -1,0 +1,48 @@
+.tbg{
+  --background-color: cadetblue;
+  background:cadetblue ;
+  background-color: cadetblue !important;
+
+}
+.txt{
+  font-family: sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+}
+.marg{
+  margin: 10%;
+}
+.hgt{
+  margin-bottom: 11%;
+
+}
+.txt2{
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+.brdr{
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.logtxt{
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+.txtmarg{
+  margin-bottom: 3%;
+}
+.fptxt{
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  font-style:normal;
+}
+.txtcntr{
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 5% ;
+  margin-bottom: 5%;
+}

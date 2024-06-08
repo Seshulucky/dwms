@@ -1,0 +1,31 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>SginIn Page</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+<ion-grid class="cntr marg">
+  <ion-row class="hgt">
+    <ion-label class="txt">Sign in</ion-label>
+  </ion-row>
+  <ion-row class="hgt">
+    <ion-label class="txt2">Login by entering your email address and password</ion-label></ion-row>
+  <ion-row>
+    <ion-label class="logtxt txtmarg">Email address</ion-label>
+    <ion-input class="brdr txtmarg" type="text"></ion-input>
+    <ion-label class="logtxt txtmarg">Password</ion-label>
+    <ion-input class="brdr txtmarg" type="Password"></ion-input>
+    <ion-label class="fptxt txtmarg">Forgot password?</ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-button class="txt txtmarg txtcntr">Log in</ion-button>
+  </ion-row>
+  <ion-row class="txtcntr">
+    <ion-label class="txtcntr">OR</ion-label>
+  </ion-row>
+  <ion-row class="txtcntr">
+      <ion-button class="txtcntr" (click)="signInWithGoogle()">Sign in with Google</ion-button>
+  </ion-row>
+</ion-grid>
+</ion-content>
