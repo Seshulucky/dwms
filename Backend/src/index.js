@@ -6,6 +6,7 @@ const User = require("./config");
 const multer = require("multer");
 const session = require("express-session");
 const File = require("./file");
+const { error } = require("console");
 
 const app = express();
 const PORT = 3000;
@@ -33,22 +34,36 @@ const storage = multer.diskStorage({
     cb(null, fileName);
   },
 });
-const upload = multer({ storage: storage });
 
+const maxSize = 50 * 1024 * 1024; //file size is 50 mb
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype == "image/png" || file.mimetype == "image/jpeg" || file.mimetype=="image/jpg") {
+      file.mimetype = cb(null, true);
+    } else {
+      cb(null, false);
+      return cb(new Error("Only .png,.jpeg allowed!"));
+    }
+  },
+  limits: { fileSize: maxSize },
+});
+
+// GET routs
 app.get("/", (req, res) => {
   res.render("login");
 });
 
-app.get("/users/:id", async (req,res)=>{
-  const _id=req.params.id;
-    const userDataById = await User.findById({_id});
-res.send(userDataById)
+app.get("/users/:id", async (req, res) => {
+  const _id = req.params.id;
+  const userDataById = await User.findById({ _id });
+  res.send(userDataById);
 });
 
-app.get("/users", async (req,res)=>{
-    const userData = await User.find({});
-res.send(userData);
-})
+app.get("/users", async (req, res) => {
+  const userData = await User.find({});
+  res.send(userData);
+});
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
@@ -56,10 +71,15 @@ app.get("/signup", (req, res) => {
 app.get("/admin", (req, res) => {
   res.render("signup");
 });
+
+app.get("/files", async (req, res) => {
+  const allFiles = await File.find({});
+  res.send(allFiles);
+});
 // Middleware
 app.use(
   session({
-    secret: "TeriMehman*0", // Replace with your secret key
+    secret: "Teri34Mehman*0", // Replace with your secret key
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }, // Set secure to true in production with HTTPS
@@ -87,17 +107,17 @@ app.post("/signup", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-  const { email, password} = req.body;
+  const { email, password } = req.body;
   try {
     const check = await User.findOne({ email });
-    console.log(check,"fromdb");
+    console.log(check, "fromdb");
     if (!check) {
       return res.send("User cannot found");
     } else {
       // compare password
       const isPasswordMatch = await bcrypt.compare(password, check.password);
       // Save user id in session
-      req.session.user_id =check. _id;
+      req.session.user_id = check._id;
       const userData = await User.findById({ _id: req.session.user_id });
 
       if (!isPasswordMatch) {
@@ -115,8 +135,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/files", upload.single("image"), async (req, res) => {
-
-    const { title, description, clientName, taglines } = req.body;
+  const { title, description, clientName, taglines } = req.body;
 
   try {
     await File.create({
@@ -131,45 +150,72 @@ app.post("/files", upload.single("image"), async (req, res) => {
     return res.status(201).send("File created Successfully");
   } catch (err) {
     console.error(err);
-    return res.status(500).send("Server Error");
+    return res.status(500).send(err);
   }
 });
 
 // Route to fetch user by ID
 app.get("/users/:id", async (req, res) => {
-    try {
-      const _id = req.params.id;
-      const userDataById = await User.findById(_id);
-      if (!userDataById) {
-        return res.status(404).send('User not found');
-      }
-  
-      res.send(userDataById);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('An error occurred');
+  try {
+    const _id = req.params.id;
+    const userDataById = await User.findById(_id);
+    if (!userDataById) {
+      return res.status(404).send("User not found");
     }
-  });
-  
-  // Route to change user role to admin
-  app.put("/users/:id/make-admin", async (req, res) => {
-    try {
-      const _id = req.params.id;
-      const user = await User.findById(_id);
-  console.log(user);
-      if (!user) {
-        return res.status(404).send('User not found');
-      }
-  
-      user.role = 'ADMIN';
-      await user.save();
-  
-      res.send(`User with ID ${_id} is now an admin`);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('An error occurred');
+
+    res.send(userDataById);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred");
+  }
+});
+
+// Route to change user role to admin
+app.put("/users/:id/make-admin", async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const user = await User.findById(_id);
+    if (!user) {
+      return res.status(404).send("User not found");
     }
-  });
+
+    user.role = "ADMIN";
+    await user.save();
+
+    res.send(`User with ID ${_id} is now an admin`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred");
+  }
+});
+
+// Update file status
+app.put("/file/:id", async (req, res) => {
+  console.log(req.body, req.params.id);
+  try {
+    const resourceId = req.params.id;
+    const updates = req.body;
+
+    if (!["UNAPPROVED", "APPROVED", "REJECTED"].includes(updates.status)) {
+      return res.status(400).send({ error: "Invalid status value" });
+    }else if (updates.status === 'REJECTED' && !updates.rejectReason) {
+      return res.status(400).send({ error: 'Reject reason is required when status is REJECTED' });
+    }
+    File.findOneAndUpdate();
+    const resource = await File.findByIdAndUpdate(resourceId, updates, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!resource) {
+      return res.status(404).send({ error: "Resource not found" });
+    }
+
+    res.send(resource);
+  } catch (error) {
+    res.status(500).send({ error: "Server error" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
