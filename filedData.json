@@ -1,0 +1,72 @@
+[
+    {
+        "status": "UNAPPROVED",
+        "rejectReson": "YET TO APPROVE",
+        "_id": "6662d4dc0593440a2dd3e389",
+        "title": "Cupon ",
+        "description": "BNFRED",
+        "clientName": "NSE",
+        "taglines": "maut ka kuaan",
+        "image": "/uploads/1717753051972-annie-spratt-m1t-RJ1iCIU-unsplash.jpg",
+        "uploadedBy": "666228038467ca0adfbe44c7",
+        "createdAt": "2024-06-07T09:37:32.028Z",
+        "updatedAt": "2024-06-07T09:37:32.028Z",
+        "__v": 0
+    },
+    {
+        "status": "UNAPPROVED",
+        "rejectReson": "YET TO APPROVE",
+        "_id": "6662d7c3a52598102f7134fe",
+        "title": "Ting",
+        "description": "ting is song teaching app for toddlers",
+        "clientName": "Korus",
+        "taglines": "Song for happiness ",
+        "image": "/uploads/1717753795456-diego-ph-fIq0tET6llw-unsplash.jpg-1717753795819",
+        "uploadedBy": "666228038467ca0adfbe44c7",
+        "createdAt": "2024-06-07T09:49:55.831Z",
+        "updatedAt": "2024-06-07T09:49:55.831Z",
+        "__v": 0
+    },
+    {
+        "rejectReson": "YET TO APPROVE",
+        "_id": "66633af545f87552165cff56",
+        "title": "Title",
+        "description": "desc",
+        "clientName": "cl name",
+        "taglines": "tag",
+        "image": "/uploads/1717779188579-lauren-mancke-sil2Hx4iupI-unsplash.jpg",
+        "uploadedBy": "666228038467ca0adfbe44c7",
+        "status": "REJECTED",
+        "createdAt": "2024-06-07T16:53:09.070Z",
+        "updatedAt": "2024-06-08T11:39:08.516Z",
+        "__v": 0
+    },
+    {
+        "rejectReson": "YET TO APPROVE",
+        "_id": "666442572d7898b662ecda2e",
+        "title": "dsdsd",
+        "description": "ssad",
+        "clientName": "kkksdf",
+        "taglines": "s",
+        "image": "/uploads/1717846615470-WhatsApp Image 2024-05-20 at 20.31.28.jpeg",
+        "status": "REJECTED",
+        "createdAt": "2024-06-08T11:36:55.488Z",
+        "updatedAt": "2024-06-08T11:44:33.414Z",
+        "__v": 0,
+        "rejectReason": "NONE"
+    },
+    {
+        "_id": "6664431baad9a99c5f70d26e",
+        "title": "Dffef",
+        "description": "ssaddfasd",
+        "clientName": "ppfwe",
+        "taglines": "sdscsd",
+        "image": "/uploads/1717846811426-WhatsApp Image 2024-05-20 at 20.31.28.jpeg",
+        "status": "APPROVED",
+        "rejectReson": "YET TO APPROVE",
+        "createdAt": "2024-06-08T11:40:11.444Z",
+        "updatedAt": "2024-06-08T11:43:50.825Z",
+        "__v": 0,
+        "rejectReason": "NONE"
+    }
+]

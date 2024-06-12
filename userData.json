@@ -1,0 +1,59 @@
+[
+    {
+        "_id": "6662228b742afa107086be07",
+        "email": "jesma@gmail.com",
+        "password": "Jes%6152612llsdd",
+        "role": "USER",
+        "username": "deep",
+        "__v": 0,
+        "createdAt": "2024-06-06T20:56:43.930Z",
+        "updatedAt": "2024-06-06T20:56:43.930Z"
+    },
+    {
+        "_id": "666226473401a81101cfea99",
+        "email": "Lma@gmail.com",
+        "password": "kkoopp09*23142",
+        "role": "USER",
+        "username": "deep",
+        "__v": 0,
+        "createdAt": "2024-06-06T21:12:39.096Z",
+        "updatedAt": "2024-06-06T21:12:39.096Z"
+    },
+    {
+        "_id": "666228038467ca0adfbe44c7",
+        "email": "alma09@gmail.com",
+        "password": "$2b$10$qp.8bZya2gQSWilmlJVtIuIa6/daGqG0x9yQgwFazjCIoK3zzmje2",
+        "role": "USER",
+        "username": "deep",
+        "__v": 0,
+        "createdAt": "2024-06-06T21:20:03.405Z",
+        "updatedAt": "2024-06-06T21:20:03.405Z"
+    },
+    {
+        "_id": "66622834f342f198cb7827f5",
+        "email": "biman@gmail.com",
+        "password": "$2b$10$zWWAAQLq4tbQts6cXIL1OuonVcAnp4XXtoxnHyoqV/ryNPqGX090m",
+        "role": "ADMIN",
+        "__v": 0,
+        "createdAt": "2024-06-06T21:20:52.872Z",
+        "updatedAt": "2024-06-07T12:08:48.415Z"
+    },
+    {
+        "_id": "66622864a16e028cb83171a0",
+        "email": "arun@gmail.com",
+        "password": "$2b$10$NKEvUP08sDH4oHM82hylmukJRxFAWo0YFGf8ymr5YRrwhX9aG3x5q",
+        "role": "ADMIN",
+        "__v": 0,
+        "createdAt": "2024-06-06T21:21:40.363Z",
+        "updatedAt": "2024-06-06T21:21:40.363Z"
+    },
+    {
+        "_id": "66622daaa1aeae1083820516",
+        "email": "alma0@gmail.com",
+        "password": "$2b$10$RIxKx5N2b16W5i0B5zpLMutnjzC/YkJGxnLwprLDyapcj9eEg17je",
+        "role": "USER",
+        "__v": 0,
+        "createdAt": "2024-06-06T21:44:10.100Z",
+        "updatedAt": "2024-06-06T21:44:10.100Z"
+    }
+]

@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import File from '../types/file';
 
 @Component({
   selector: 'app-user',
@@ -6,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
-
+files:Array<File>=[];
   ngOnInit() {
+    this.getAllFiles().subscribe(upi=>{
+      // console.log(upi);
+      this.files=upi
+      console.log(this.files);
+    
+    });
   }
   fileData = {
     title: '',
@@ -18,7 +27,7 @@ export class UserPage implements OnInit {
     psdFile: null
   };
 
-  constructor() { }
+  constructor(private _http:HttpClient) { }
 
   // handleFileInput(files: FileList) {
   //   this.fileData.image = files.item(0);
@@ -30,6 +39,10 @@ export class UserPage implements OnInit {
 
   uploadFile() {
     console.log('File uploaded:', this.fileData);
+  }
+  getAllFiles():Observable<any> {
+    let url="http://localhost:3000/files"
+   return this._http.get(url);
   }
 
     //...
