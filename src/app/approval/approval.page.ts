@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RejectModalComponent } from '../reject-modal/reject-modal.component';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-approval',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprovalPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -17,6 +19,23 @@ export class ApprovalPage implements OnInit {
     { id: 3, title: 'Pending File 3', description: 'Description 3' }
   ];
 
+
+  async openRejectModal() {
+    const modal = await this.modalController.create({
+      component: RejectModalComponent,
+       cssClass: 'reject-modal'
+    });
+
+    modal.onDidDismiss().then((data) => {
+      if (data.data) {
+        console.log('Reject reason:', data.data.reason);
+        // Handle the reject reason here
+      }
+    });
+
+    return await modal.present();
+  }
+}
   // constructor() { }
 
   // ngOnInit() { }
@@ -28,4 +47,3 @@ export class ApprovalPage implements OnInit {
   // rejectFile(file) {
   //   console.log(`Rejecting file: ${file.title}`);
   // }
-}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { RejectModalComponent } from '../reject-modal/reject-modal.component';
+import { RejectModalComponent } from  '../reject-modal/reject-modal.component';
 
 @Component({
   selector: 'app-view-details',

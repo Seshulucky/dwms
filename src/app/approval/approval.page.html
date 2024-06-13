@@ -9,7 +9,7 @@
     <ion-item class="item-content"   *ngFor="let file of pendingFiles">
       <ion-label>{{ file.title }}</ion-label>
       <ion-button color="success" >Approve</ion-button>
-      <ion-button color="danger" >Reject</ion-button>
+      <ion-button color="danger" (click)="openRejectModal()">Reject</ion-button>
     </ion-item>
   </ion-list>
   <div style="margin-left: 75%;">
