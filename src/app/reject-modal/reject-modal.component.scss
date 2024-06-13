@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.modal-wrapper {
+  height: 60%; /* Adjust the height as needed */
+  width: 80%; /* Adjust the width as needed */
+  max-width: 500px; /* Optional: limit the maximum width */
+  max-height: 600px; /* Optional: limit the maximum height */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+ion-header {
+  --background: #f8f8f8; /* Customize header background color */
+  --color: #333; /* Customize header text color */
+}
+
+ion-content {
+  --background: #ffffff; /* Customize content background color */
+}
+
+ion-button {
+  margin: 15px;
+}
