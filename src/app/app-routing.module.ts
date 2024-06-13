@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'view-details',
     loadChildren: () => import('./view-details/view-details.module').then( m => m.ViewDetailsPageModule)
   },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
 
 ];
 
