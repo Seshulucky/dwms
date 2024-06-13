@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'approval',
     loadChildren: () => import('./approval/approval.module').then( m => m.ApprovalPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'view-details',
+    loadChildren: () => import('./view-details/view-details.module').then( m => m.ViewDetailsPageModule)
+  },
+
 ];
 
 @NgModule({
