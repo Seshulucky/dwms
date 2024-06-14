@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="uploadFile()">
+  <form (ngSubmit)="submitForm()">
     <ion-item class="item-content">
       <ion-label position="floating">Title</ion-label>
       <ion-input [(ngModel)]="fileData.title" name="title"></ion-input>
@@ -24,15 +24,15 @@
     </ion-item>
     <ion-item class="item-content">
       <ion-label position="stacked">Image</ion-label>
-
-      <ion-input ></ion-input>
+      <!-- <input type="file"> -->
+      <input type="file" (change)="onFileChange($event)" />
     </ion-item>
-    <ion-item class="item-content">
+    <!-- <ion-item class="item-content">
       <ion-label position="stacked">PSD File</ion-label>
       <ion-input ></ion-input>
 
-    </ion-item>
-    <ion-button color="light" expand="full" type="submit">Upload</ion-button>
+    </ion-item> -->
+    <ion-button color="primary" expand="full" (click)="submitForm()">Upload</ion-button>
   </form>
   <ion-row style="margin-left: 40%;">
     <ion-button color="warning" routerLink="/home">Back</ion-button>

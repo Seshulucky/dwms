@@ -11,13 +11,13 @@
   <ion-label class="txt2">Enter your details to signup</ion-label></ion-row>
 <ion-row>
   <ion-label class="logtxt txtmarg">Enter Name</ion-label>
-  <ion-input class="brdr txtmarg" type="text"></ion-input>
+  <!-- <ion-input class="brdr txtmarg" type="text" [(ngModel)]="userData.email"></ion-input> -->
   <ion-label class="logtxt txtmarg">Enter email address</ion-label>
-  <ion-input class="brdr txtmarg" type="text"></ion-input>
+  <ion-input class="brdr txtmarg" type="text" [(ngModel)]="userData.email"></ion-input>
   <ion-label class="logtxt txtmarg">Enter password</ion-label>
-  <ion-input class="brdr txtmarg" type="text"></ion-input>
-  <ion-label class="logtxt txtmarg">Re enter Password</ion-label>
-  <ion-input class="brdr txtmarg" type="Password"></ion-input>
+  <ion-input class="brdr txtmarg" type="Password"[(ngModel)]="userData.password"></ion-input>
+  <!-- <ion-label class="logtxt txtmarg">Re enter Password</ion-label>
+  <ion-input class="brdr txtmarg" type="Password"></ion-input> -->
 </ion-row>
 <ion-row>
   <ion-button class="txt txtmarg txtcntr">Sign up</ion-button>

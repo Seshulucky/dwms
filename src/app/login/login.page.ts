@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  constructor(private _http: HttpClient) {}
 
-  constructor() { }
+  userData = {
+    email: '',
+    password: '',
+  };
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  login() {
+    this._http.post('http://localhost:3000/login', this.userData).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      // (error) => {
+      //   console.log(error);
+      // }
+    );
   }
   async signInWithGoogle() {
     try {
